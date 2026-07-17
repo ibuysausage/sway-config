@@ -40,8 +40,8 @@ bindsym $mod+w exec $term
 bindsym $mod+q kill
 bindsym $mod+Space exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
