@@ -8,7 +8,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu rofi -show drun
+set $menu rofi -show drun -show-icons -theme ~/.config/rofi/config.rasi
 
 # Autotiling
 
