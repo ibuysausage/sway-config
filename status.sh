@@ -19,4 +19,4 @@ battery_status=$(acpiconf -i 0 | grep "Remaining capacity" | cut -b 21-23)
 # ifconfig is used on FreeBSD
 private_ip=$(ifconfig wlan0 | grep "inet" | cut -d " " -f 2)
 
-echo "$sep  $sys_info  on  $private_ip  $sep  $uptime  $sep  $date  $sep  $battery_status  $sep  $time  $sep"
+echo "$sep  $sys_info  $sep  $private_ip  $sep  $uptime  $sep  $date  $sep  $battery_status  $sep  $time  $sep"
