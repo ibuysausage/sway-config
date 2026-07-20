@@ -12,7 +12,11 @@ time=$(date "+%H:%M:%S")
 # Not sure for linux
 sys_info=$(uname -ar | cut -d " " -f 1,3 | cut -d "-" -f 1)
 
-battery_status=$(acpiconf -i 0 | grep "Remaining capacity" | cut -b 21-23)
+if [[ $OSTYPE == "freebsd"* ]]; then
+    battery_status=$(acpiconf -i 0 | grep "Remaining capacity" | cut -b 21-23)
+else
+    battery_status="$(cat /sys/class/power_supply/BAT0/capacity)%"
+fi
 
 # ifconfig is used on FreeBSD
 private_ip=$(ifconfig wlan0 | grep "inet" | cut -d " " -f 2)
