@@ -13,7 +13,7 @@ time=$(date "+%H:%M:%S")
 sys_info=$(uname -ar | cut -d " " -f 1,3 | cut -d "-" -f 1)
 
 if [[ $OSTYPE == "freebsd"* ]]; then
-    battery_status="$(acpiconf -i 0 | grep 'Remaining capacity' | awk -F' ' '{print $3}') $(acpiconf -i 0 | grep "State" | awk -F' ' '{print $2}'"
+    battery_status="$(acpiconf -i 0 | grep 'Remaining capacity' | awk -F' ' '{print $3}') $(acpiconf -i 0 | grep 'State' | awk -F' ' '{print $2}')"
 else
     battery_status="$(cat $bat/capacity)% <span weight=\"bold\">$(cat $bat/status)</span>"
 fi
